@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM - Manuplation</title>
+  </head>
+  <body>
+    <ul>
+      <li class="hi">Ashish Kumar Singh</li>
+      <li class="hi">Ashish Kumar Singh</li>
+      <li class="hi">Ashish Kumar Singh</li>
+      <li class="hi">Ashish Kumar Singh</li>
+    </ul>
+  </body>
+
+  <script>
+    const parentDiv = document.createElement("div");
+    parentDiv.setAttribute("id", "parentID");
+    parentDiv.setAttribute("class", "parentClass");
+    const text = document.createTextNode("hi from createTextNode");
+    parentDiv.appendChild(text);
+
+    const body = document.body;
+    body.appendChild(parentDiv);
+    // console.log(body);
+
+    const li = document.querySelectorAll(".hi");
+    for (let i = 0; i < li.length; i++) {
+      console.log(li[i]);
+    }
+  </script>
+</html>
