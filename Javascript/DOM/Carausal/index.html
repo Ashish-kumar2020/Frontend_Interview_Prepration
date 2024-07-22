@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Carausal</title>
+  </head>
+  <body>
+    <div style="display: flex">
+      <button class="prevBtn">Previous</button>
+      <div
+        class="imagedisplay"
+        style="width: 600px; border: 2px solid black; height: 400px"
+      ></div>
+      <button class="nextBtn">Next</button>
+    </div>
+  </body>
+  <script>
+    let imgArr = [
+      "./image_1.png",
+      "./image_2.png",
+      "./image_3.png",
+      "./image_4.png",
+      "./image_5.png",
+      "./image_6.png",
+    ];
+    const imagedisplay = document.querySelector(".imagedisplay");
+    const prevBtn = document.querySelector(".prevBtn");
+    const nextBtn = document.querySelector(".nextBtn");
+    console.log(imgArr);
+
+    // create img tag
+    let currentImg = 0;
+    const imgTag = document.createElement("img");
+    imgTag.src = imgArr[currentImg];
+    imagedisplay.appendChild(imgTag);
+
+    function updateImgae() {
+      imgTag.src = imgArr[currentImg];
+    }
+
+    nextBtn.addEventListener("click", () => {
+      currentImg = (currentImg + 1) % imgArr.length;
+      updateImgae();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      currentImg = (currentImg - 1 + imgArr.length) % imgArr.length;
+      updateImgae();
+    });
+  </script>
+</html>
