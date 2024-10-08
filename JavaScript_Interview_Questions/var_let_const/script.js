@@ -10,5 +10,13 @@ function abc() {
 let a = 20;
 // Global scope
 {
-  console.log(a);
+  // console.log(a);
 }
+
+var x = 20;
+function print() {
+  console.log(x);
+  var x = 21;
+}
+
+print();
