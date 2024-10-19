@@ -1,0 +1,28 @@
+sequenceDiagram
+    participant HTML as HTML Parsing
+    participant JS as JavaScript
+    
+    Note over HTML, JS: Normal Script
+    HTML->>HTML: Start Parsing
+    HTML->>JS: Encounter Script
+    HTML-->>HTML: Pause Parsing
+    JS->>JS: Download Script
+    JS->>JS: Execute Script
+    HTML->>HTML: Resume Parsing
+    
+    Note over HTML, JS: Defer
+    HTML->>HTML: Start Parsing
+    HTML->>JS: Encounter Script
+    HTML->>HTML: Continue Parsing
+    JS-->>JS: Download Script in Background
+    HTML->>HTML: Complete Parsing
+    JS->>JS: Execute Script
+    
+    Note over HTML, JS: Async
+    HTML->>HTML: Start Parsing
+    HTML->>JS: Encounter Script
+    HTML->>HTML: Continue Parsing
+    JS-->>JS: Download Script in Background
+    JS->>HTML: Pause HTML Parsing
+    JS->>JS: Execute Script
+    HTML->>HTML: Resume Parsing
