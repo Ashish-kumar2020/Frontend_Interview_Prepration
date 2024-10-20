@@ -16,6 +16,14 @@ function App() {
         <h1>Hi From Children Props</h1>
         <p>Testing Children props</p>
       </WrapperComponent>
+      <Card>
+        <h2>Card Title</h2>
+        <p>This is some content inside the card.</p>
+      </Card>
+      <Card>
+        <img src="image.jpg" alt="example" />
+        <p>This card displays an image and some text.</p>
+      </Card>
     </>
   );
 }
@@ -30,6 +38,10 @@ const NullishCoalishingOperator = () => {
 
 function WrapperComponent({ children }) {
   return <div>{children}</div>;
+}
+
+function Card({ children }) {
+  return <div className="card">{children}</div>;
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
