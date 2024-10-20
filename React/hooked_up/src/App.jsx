@@ -1,11 +1,13 @@
 import "./App.css";
-import BasicState from "./component/BasicState";
+import BasicState from "./component/use-State";
+import UseEffectHook from "./component/use-effect";
 
 function App() {
   return (
     <>
       <div>
-        <BasicState />
+        {/* <BasicState /> */}
+        <UseEffectHook />
       </div>
     </>
   );
