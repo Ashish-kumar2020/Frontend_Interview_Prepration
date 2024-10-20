@@ -7,6 +7,22 @@ function App() {
   );
 }
 
+class DisplayList extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div>
+        <ul>
+          <li>{this.props.title}</li>
+        </ul>
+      </div>
+    );
+  }
+}
+
 class DisplayPost extends React.Component {
   constructor(props) {
     super(props);
@@ -32,11 +48,9 @@ class DisplayPost extends React.Component {
     return (
       <h1>
         Hi From Display Component
-        <ul>
-          {this.state.posts.map((post) => (
-            <li key={post.id}>{post.title}</li>
-          ))}
-        </ul>
+        {this.state.posts.map((post) => (
+          <DisplayList key={post.id} title={post.title} />
+        ))}
       </h1>
     );
   }
