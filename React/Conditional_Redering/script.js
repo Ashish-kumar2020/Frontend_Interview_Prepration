@@ -10,7 +10,12 @@ function App() {
       <h1>Conditional Rendring</h1>;<h2>Optional Chaining</h2>
       {/* This does not gives the eror on the page */}
       {obj?.getAddress?.city}
-      <NullishCoalishingOperator />
+      {/* <NullishCoalishingOperator /> */}
+      {/* Using Children Props */}
+      <WrapperComponent>
+        <h1>Hi From Children Props</h1>
+        <p>Testing Children props</p>
+      </WrapperComponent>
     </>
   );
 }
@@ -22,6 +27,10 @@ const NullishCoalishingOperator = () => {
   // using NullishCoalishingOperator
   return <p>{user ?? secuser}</p>;
 };
+
+function WrapperComponent({ children }) {
+  return <div>{children}</div>;
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
