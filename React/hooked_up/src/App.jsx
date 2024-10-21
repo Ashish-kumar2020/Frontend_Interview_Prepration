@@ -1,16 +1,19 @@
 import "./App.css";
+import ThemeComponent from "./component/ThemeComponent";
 import BasicState from "./component/use-State";
 import UseEffectHook from "./component/use-effect";
 import UseRef from "./component/use-ref";
+import { ThemeProvider } from "./context/themeContext";
 
 function App() {
   return (
     <>
-      <div>
+      <ThemeProvider>
         {/* <BasicState /> */}
         {/* <UseEffectHook /> */}
-        <UseRef />
-      </div>
+        {/* <UseRef /> */}
+        <ThemeComponent />
+      </ThemeProvider>
     </>
   );
 }
