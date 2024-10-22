@@ -1,5 +1,6 @@
 import "./App.css";
 import ThemeComponent from "./component/ThemeComponent";
+import UseDebounceHook from "./component/UseDebounceHook";
 import UseFetchHook from "./component/UseFetchHook";
 import UseImperativeHandleHook from "./component/UseImperativeHandleHook";
 import UseReducerHook from "./component/UseReducerHook";
@@ -22,7 +23,8 @@ function App() {
         {/* <UseMemoHook /> */}
         {/* <UseImperativeHandleHook /> */}
         {/* <WindowSize /> */}
-        <UseFetchHook />
+        {/* <UseFetchHook /> */}
+        <UseDebounceHook />
       </ThemeProvider>
     </>
   );
