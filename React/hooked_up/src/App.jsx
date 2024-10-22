@@ -2,6 +2,7 @@ import "./App.css";
 import ThemeComponent from "./component/ThemeComponent";
 import UseImperativeHandleHook from "./component/UseImperativeHandleHook";
 import UseReducerHook from "./component/UseReducerHook";
+import WindowSize from "./component/WindowSize";
 import BasicState from "./component/use-State";
 import UseEffectHook from "./component/use-effect";
 import UseRef from "./component/use-ref";
@@ -18,7 +19,8 @@ function App() {
         {/* <ThemeComponent /> */}
         {/* <UseReducerHook /> */}
         {/* <UseMemoHook /> */}
-        <UseImperativeHandleHook />
+        {/* <UseImperativeHandleHook /> */}
+        <WindowSize />
       </ThemeProvider>
     </>
   );
