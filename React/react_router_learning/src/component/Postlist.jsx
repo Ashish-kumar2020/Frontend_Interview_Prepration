@@ -16,10 +16,10 @@ const PostList = () => {
 };
 
 export async function postLoader() {
-  const resposne = await axios.get(
+  const response = await axios.get(
     "https://jsonplaceholder.typicode.com/posts?_limit=50"
   );
-  return resposne;
+  return response;
 }
 
 export default PostList;

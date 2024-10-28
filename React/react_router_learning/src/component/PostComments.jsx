@@ -1,10 +1,11 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-
-const PostComment = () => {
+import axios from "axios";
+const PostComments = () => {
   const [comments, setComments] = useState([]);
-  const [post, setPost] = useState(null);
+  const [post, setpost] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const { postId } = useParams();
@@ -12,19 +13,14 @@ const PostComment = () => {
 
   const fetchData = async () => {
     setLoading(true);
-    try {
-      const [postResponse, commentsResponse] = await Promise.all([
-        axios.get(`https://jsonplaceholder.typicode.com/posts/${postId}`),
-        axios.get(
-          `https://jsonplaceholder.typicode.com/posts/${postId}/comments`
-        ),
-      ]);
-
-      setPost(postResponse.data);
-      setComments(commentsResponse.data);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
+    const [postResponse, commentsResponse] = await Promise.all([
+      axios.get(`https://jsonplaceholder.typicode.com/posts/${postId}`),
+      axios.get(
+        `https://jsonplaceholder.typicode.com/posts/${postId}/comments`
+      ),
+    ]);
+    setpost(postResponse.data);
+    setComments(commentsResponse.data);
     setLoading(false);
   };
 
@@ -47,15 +43,16 @@ const PostComment = () => {
           <ul>
             {comments.map((comment) => (
               <li key={comment.id}>
-                <strong>{comment.name}</strong> : {comment.body}
+                <strong>{comment.name}</strong>: {comment.body}
               </li>
             ))}
           </ul>
         </div>
       )}
+
       <button onClick={() => navigate(-1)}>Go Back</button>
     </div>
   );
 };
 
-export default PostComment;
+export default PostComments;

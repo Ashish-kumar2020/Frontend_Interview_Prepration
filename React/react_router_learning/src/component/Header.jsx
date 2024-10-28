@@ -1,12 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
 const Header = () => {
   return (
-    <header className="header">
-      <NavLink to="/">Home </NavLink>
-      <NavLink to="/posts"> Posts </NavLink>
-    </header>
+    <div>
+      <h1>React Router DOM</h1>
+      <NavLink>Login</NavLink>
+      <NavLink>Signup</NavLink>
+    </div>
   );
 };
 
