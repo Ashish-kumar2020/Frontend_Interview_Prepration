@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    margin: 20px;
+    align-items: center;
+}
+
+.employee_contianer {
+    width: 97vw;
+    border: 2px solid;
+    height: 70vh;
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.employee_name_list_container {
+    width: 40%;
+    border: 2px solid;
+    overflow-y: scroll;
+}
+
+.single_employee_details_container {
+    width: 60%;
+    border: 2px solid;
+}
+
+.emplyeeName {
+
+    padding: 11px;
+    background-color: lightgrey;
+    margin-bottom: 17px;
+    width: 300px;
+    margin-left: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.emplyeeName:hover {
+    background-color: grey;
+}
+
+.selected {
+    background-color: beige;
+}
+
+img {
+    width: 110px;
+}
+
+.singleemplyeeName {
+    padding: 3px;
+    margin-left: 30px;
+    display: flex;
+}
+
+
+/* Add new employee */
+
+/* .addEmployee {
+    display: none;
+} */
+
+/* .addEmployee_create {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    margin-left: 40px;
+    display: none;
+}
+
+input {
+    margin-bottom: 20px;
+} */
+
+
+.addEmployee_create {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 31%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    background-color: white;
+    padding: 20px;
+    border: 2px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    width: 330px;
+    height: 260px;
+}
+
+
+
+input {
+    margin-bottom: 20px;
+}
