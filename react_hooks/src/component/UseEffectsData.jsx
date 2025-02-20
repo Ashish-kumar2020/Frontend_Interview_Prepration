@@ -2,15 +2,21 @@ import React, { useEffect, useState } from "react";
 
 const UseEffectsData = () => {
   const [data, setData] = useState();
-  const fetchCartData = async () => {
-    const response = await fetch("https://dummyjson.com/carts");
+  const fetchCartData = async (signal) => {
+    const response = await fetch("https://dummyjson.com/carts", { signal });
     const dataVal = await response.json();
     setData(dataVal.carts);
     console.log(data);
   };
 
   useEffect(() => {
-    fetchCartData();
+    const controller = new AbortController();
+    fetchCartData(controller.signal);
+
+    return () => {
+      controller.abort();
+      console.log("ABorted");
+    };
   }, []);
   return (
     <div>
