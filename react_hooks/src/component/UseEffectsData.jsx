@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import useCustomEffect from "../customHooks/customUseEffect";
 
 const UseEffectsData = () => {
   const [data, setData] = useState();
@@ -9,7 +10,7 @@ const UseEffectsData = () => {
     console.log(data);
   };
 
-  useEffect(() => {
+  useCustomEffect(() => {
     const controller = new AbortController();
     fetchCartData(controller.signal);
 
