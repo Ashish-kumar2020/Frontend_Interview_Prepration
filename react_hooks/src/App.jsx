@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import UseState from "./component/UseState";
 import UseEffectsData from "./component/UseEffectsData";
+import HomeComponent from "./component/HomeComponent";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -11,7 +12,8 @@ function App() {
   return (
     <>
       {/* <UseState /> */}
-      <UseEffectsData />
+      {/* <UseEffectsData /> */}
+      <HomeComponent />
     </>
   );
 }
