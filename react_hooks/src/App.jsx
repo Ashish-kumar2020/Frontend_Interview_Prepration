@@ -5,6 +5,8 @@ import "./App.css";
 import UseState from "./component/UseState";
 import UseEffectsData from "./component/UseEffectsData";
 import HomeComponent from "./component/HomeComponent";
+import ThemeContextProvider from "./component/ThemeContextProvider";
+import ThemeSwitcher from "./component/ThemeSwitcher";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -13,7 +15,10 @@ function App() {
     <>
       {/* <UseState /> */}
       {/* <UseEffectsData /> */}
-      <HomeComponent />
+      {/* <HomeComponent /> */}
+      <ThemeContextProvider>
+        <ThemeSwitcher />
+      </ThemeContextProvider>
     </>
   );
 }
