@@ -16,9 +16,17 @@ document.addEventListener("DOMContentLoaded", function () {
     deleteBtn.innerHTML = "Delete";
     editBtn.innerHTML = "Edit ";
     list.innerHTML = userInput;
+
     list.append(deleteBtn);
     list.append(editBtn);
     todoList.appendChild(list);
+
+    // Delete Todo
+    deleteBtn.addEventListener("click", function () {
+      list.remove();
+    });
     todoInput.value = "";
   });
+
+  // Delete Todo Func
 });
