@@ -25,8 +25,26 @@ document.addEventListener("DOMContentLoaded", function () {
     deleteBtn.addEventListener("click", function () {
       list.remove();
     });
+
+    // Edit Todo
+    editBtn.addEventListener("click", function () {
+      const editBox = document.createElement("input");
+      editBox.type = "input";
+      editBox.value = list.childNodes[0].textContent;
+      const saveBtn = document.createElement("button");
+      saveBtn.innerHTML = "Save";
+
+      list.innerHTML = "";
+      list.append(editBox);
+      list.append(saveBtn);
+
+      saveBtn.addEventListener("click", function () {
+        list.textContent = editBox.value;
+        list.append(deleteBtn);
+        list.append(editBtn);
+        todoInput.value = "";
+      });
+    });
     todoInput.value = "";
   });
-
-  // Delete Todo Func
 });
