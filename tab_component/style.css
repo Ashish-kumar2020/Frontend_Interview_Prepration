@@ -1,0 +1,22 @@
+body {
+    font-family: sans-serif;
+}
+
+.tabContent {
+    display: none;
+}
+
+.tabLinks {
+    background-color: #f2f2f2;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.tabLinks:hover {
+    background-color: #ddd;
+}
+
+.tabContent.active {
+    display: block;
+}
