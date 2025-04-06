@@ -4,24 +4,37 @@ const colors = ["red", "yellow", "black", "purple", "green", "blue", "orange"];
 
 const colorContainer = document.querySelector(".colorContainer");
 
-colors.forEach((color) => {
+function createColorButton(color) {
   const colorBtn = document.createElement("button");
-  colorBtn.setAttribute("id", color);
-  colorBtn.innerHTML = color;
-  colorBtn.style.backgroundColor = color;
-  colorBtn.style.marginRight = "20px";
-  colorBtn.style.marginTop = "10px";
-  colorBtn.style.cursor = "pointer";
-  colorBtn.style.width = "60px";
-  colorBtn.style.height = "30px";
-  colorBtn.style.borderRadius = "20px";
-  colorBtn.addEventListener("click", function () {
-    changeBackgroundColor(color);
+  colorBtn.id = color;
+  colorBtn.textContent = color;
+  Object.assign(colorBtn.style, {
+    backgroundColor: color,
+    marginRight: "10px",
+    marginTop: "10px",
+    cursor: "pointer",
+    width: "60px",
+    height: "30px",
+    borderRadius: "20px",
+    border: "none",
+    fontWeight: "bold",
+    textTransform: "capitalize",
+    cursor: "pointer",
   });
-  colorContainer.appendChild(colorBtn);
-});
+
+  if (color === "yellow") {
+    colorBtn.style.color = "black";
+  } else {
+    colorBtn.style.color = "fff";
+  }
+
+  colorBtn.addEventListener("click", () => changeBackgroundColor(color));
+  return colorBtn;
+}
+
+colors.forEach((color) => colorContainer.appendChild(createColorButton(color)));
 
 function changeBackgroundColor(color) {
   console.log(color);
-  document.querySelector("body").style.backgroundColor = color;
+  document.body.style.backgroundColor = color;
 }
