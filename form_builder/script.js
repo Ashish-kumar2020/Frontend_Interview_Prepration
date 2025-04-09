@@ -24,7 +24,7 @@ function createInputSelector(selectorName) {
 
   const inputElParent = document.createElement("div");
   inputElParent.id = selectorName;
-
+  inputElParent.style.marginBottom = "15px";
   const inputEle = document.createElement("input");
   const label = document.createElement("label");
 
@@ -77,16 +77,24 @@ submitBtn.addEventListener("click", () => {
   console.log(formData);
 
   // Clear previous display data
-  formDisplayContainer.innerHTML = "";
+  formDisplayContainer.innerHTML = "<h2>Form Preview</h2>";
 
   Object.entries(formData).forEach(([key, value]) => {
-    const displayKey = document.createElement("h2");
+    const displayDiv = document.createElement("div");
+    displayDiv.style.padding = "10px";
+    displayDiv.style.background = "#f4f4f4";
+    displayDiv.style.margin = "10px 0";
+    displayDiv.style.borderRadius = "8px";
+
+    const displayKey = document.createElement("h3");
+    displayKey.style.color = "#007bff";
     displayKey.textContent = key;
 
-    const displayValue = document.createElement("h2");
+    const displayValue = document.createElement("p");
     displayValue.textContent = value;
 
-    formDisplayContainer.append(displayKey, displayValue);
+    displayDiv.append(displayKey, displayValue);
+    formDisplayContainer.appendChild(displayDiv);
   });
 });
 
