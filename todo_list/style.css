@@ -1,8 +1,131 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:wght@100..900&family=Poppins:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-body {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
     font-family: "Poppins", sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container */
+.todo-container {
+    background: #ffffff;
+    padding: 20px;
+    width: 400px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Input & Add Button */
+.userInput-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.inputTodo {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.inputTodo:focus {
+    border-color: #007bff;
+}
+
+.addTodo {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.addTodo:hover {
+    background: #0056b3;
+}
+
+/* Todo List */
+.todo-display-container {
+    text-align: left;
+}
+
+.todoLists {
+    list-style: none;
+    padding: 0;
+}
+
+.todoLists li {
+    background: #ffffff;
+    padding: 12px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+    font-weight: 400;
+    color: #333;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    gap: 6px;
+}
+
+/* Buttons */
+button {
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.delete-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #a82332;
+}
+
+.edit-btn {
+    background: #ffc107;
+    color: white;
+}
+
+.edit-btn:hover {
+    background: #e0a800;
+}
+
+/* Save Button */
+.save-btn {
+    background: #28a745;
+    color: white;
+}
+
+.save-btn:hover {
+    background: #218838;
 }

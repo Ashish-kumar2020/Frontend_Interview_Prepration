@@ -13,51 +13,51 @@ function createTodo() {
     alert("Task cannot be empty!");
     return;
   }
+
   const li = document.createElement("li");
   const deleteBtn = document.createElement("button");
   const editBtn = document.createElement("button");
   deleteBtn.innerText = "Delete";
   editBtn.innerText = "Edit";
-  deleteBtn.id = inputTodo.value;
-  editBtn.id = inputTodo.value;
-  li.innerHTML = inputTodo.value;
+  deleteBtn.classList.add("delete-btn");
+  editBtn.classList.add("edit-btn");
 
-  //   Delete Functionality
-  deleteBtn.addEventListener("click", () => {
-    li.remove();
-  });
+  const buttonContainer = document.createElement("div");
+  buttonContainer.classList.add("button-container");
+  buttonContainer.append(editBtn, deleteBtn);
 
-  //   edit Functionality
-
-  editBtn.addEventListener("click", () => {
-    editTodo(li);
-  });
-  inputTodo.value = "";
-  li.append(deleteBtn, editBtn);
-
+  li.textContent = inputTodo.value;
+  li.append(buttonContainer);
   todoLists.appendChild(li);
+
+  deleteBtn.addEventListener("click", () => li.remove());
+  editBtn.addEventListener("click", () => editTodo(li, buttonContainer));
+
+  inputTodo.value = "";
 }
 
-function editTodo(li) {
+function editTodo(li, buttonContainer) {
   const currentText = li.firstChild.textContent;
-  console.log(currentText);
-  const deleteBtn = li.querySelector("button:nth-of-type(1)");
-  const editBtn = li.querySelector("button:nth-of-type(2)");
-  const saveBtn = document.createElement("button");
-  saveBtn.textContent = "Save";
+
   const inputEle = document.createElement("input");
   inputEle.type = "text";
   inputEle.value = currentText;
+  inputEle.classList.add("inputTodo");
+
+  const saveBtn = document.createElement("button");
+  saveBtn.textContent = "Save";
+  saveBtn.classList.add("save-btn");
 
   li.innerHTML = "";
   li.appendChild(inputEle);
   li.appendChild(saveBtn);
+
   saveBtn.addEventListener("click", () => {
     if (inputEle.value.trim() === "") {
       alert("Task cannot be empty!");
       return;
     }
-    li.innerHTML = inputEle.value;
-    li.append(deleteBtn, editBtn);
+    li.textContent = inputEle.value;
+    li.append(buttonContainer);
   });
 }
